@@ -7,7 +7,7 @@ MongoClient.connect("mongodb://localhost/sample", function (err, db) {
 
         var collection = db.collection('contact');
        
-        collection.find({ name: 'Ramu',employeeid:'US001' }).toArray(function (err, result) {
+        collection.find({ name: 'Yatheen',employeeid:'US001' }).toArray(function (err, result) {
             if (err) {
                 console.log(err);
             } else if (result.length) {
