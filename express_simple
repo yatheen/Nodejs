@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
+var query1 = require('url');
 
 app.get('/', function(req, res){
   var response = "<h2>Your Request</h2>";
+  var querystring = query1.parse(req.url,true).query;
   response += "URL:\t       " + req.originalUrl + "<br>";
+  
   response += "Protocol:  " + req.protocol + "<br>";
   response += "IP:        " + req.ip + "<br>";
   response += "Path:      " + req.path + "<br>";
@@ -14,6 +17,8 @@ app.get('/', function(req, res){
   response += "UTF8:      " + req.acceptsCharset('utf8') + "<br>";
   response += "Connection: " + req.get('connection') + "<br>";
   response += "Headers: " + JSON.stringify(req.headers) + "<br>";
+  response += "First parameter: " + querystring.id + "<br>";
+  response += "Second parameter: " + querystring.name + "<br>";
   res.send(200, response);
 });
 
