@@ -20,7 +20,7 @@ app.get('/', function(req, res){
   response += "Headers: " + JSON.stringify(req.headers) + "<br>";
   response += "First parameter: " + querystring.id + "<br>";
   response += "Second parameter: " + querystring.option + "<br>";
-    response += "url parts " + url_parts.query + "<br>";
+    response += "url parts " + req.query.option + "<br>";
   res.send(200, response);
 });
 
