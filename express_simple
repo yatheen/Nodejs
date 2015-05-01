@@ -7,9 +7,6 @@ app.get('/', function(req, res){
   var response = "<h2>Your Request</h2>";
   var querystring = query1.parse(req.url,true).query;
   var url_parts = query1.parse(req.url, true);
-  
-  
-  
   response += "URL:\t       " + req.originalUrl + "<br>";
   
   response += "Protocol:  " + req.protocol + "<br>";
@@ -35,6 +32,10 @@ app.get('/', function(req, res){
         }, function (err, doc) {
             
         });
+    }
+    else
+    {
+     console.log("Not Connected");
     }
 });
     
