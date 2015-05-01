@@ -19,7 +19,7 @@ app.get('/', function(req, res){
   response += "UTF8:      " + req.acceptsCharset('utf8') + "<br>";
   response += "Connection: " + req.get('connection') + "<br>";
   response += "Headers: " + JSON.stringify(req.headers) + "<br>";
-  response += "First parameter: " + querystring.id + "<br>";
+  response += "First parameter: " + querystring.dummyid + "<br>";
   response += "Second parameter: " + querystring.option + "<br>";
     response += "url parts " + req.query.option + "<br>";
     
@@ -28,7 +28,7 @@ app.get('/', function(req, res){
         console.log("We are connected");
         var collection = db.collection('contact');
         collection.insert({
-            "id" : id
+            "dummyid" : querystring.dummyid
         }, function (err, doc) {
             
         });
